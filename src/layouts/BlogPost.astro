@@ -20,7 +20,7 @@ const naddrMap: Record<string, string> = {
   'building-bearings': 'naddr1qqgkyatfd3jxjmn8943x2ctjd9hxwucpp4mhxue69uhkummn9ekx7mqzyquykdmh0m2h6c539w03vp9809n4vdnnduu74aas07xyantkm6fjwqcyqqq823ck2qnvx',
   'the-signed-web': 'naddr1qq88g6r994ekjemwv4jz6am9vgqs6amnwvaz7tmwdaejumr0dspzqwztxamha4tav2gjh8ckqjnhje6kxeek7w0277c8lrzwe4mdaye8qvzqqqr4gupkk9h8',
 };
-const hablaUrl = slug && naddrMap[slug] ? `https://habla.news/a/${naddrMap[slug]}` : null;
+const nostrUrl = slug && naddrMap[slug] ? `https://njump.me/${naddrMap[slug]}` : null;
 
 function formatDate(d: Date) {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -45,7 +45,7 @@ function formatDate(d: Date) {
     <div class="tip-jar">
       ⚡ If this resonated, you can zap me on Lightning: <a href="lightning:kodabuilds@coinos.io">kodabuilds@coinos.io</a>
     </div>
-    {hablaUrl && (
+    {nostrUrl && (
       <div class="nostr-verify">
         <div class="verify-header">
           <span class="verify-icon">🔐</span>
@@ -57,7 +57,7 @@ function formatDate(d: Date) {
           not "trust me," <em>verify it</em>.
         </p>
         <div class="verify-links">
-          <a href={hablaUrl} target="_blank">Verify on Habla ↗</a>
+          <a href={nostrUrl} target="_blank">Verify on Nostr ↗</a>
           <span class="verify-sep">·</span>
           <a href="/posts/the-signed-web">What does this mean?</a>
         </div>
