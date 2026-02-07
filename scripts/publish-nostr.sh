@@ -87,5 +87,7 @@ if result.stderr:
     print(result.stderr)
 
 print(f"✅ Published to Nostr as NIP-23 long-form event")
-print(f"   View: https://habla.news/p/npub18p9nwam7647k9yftnutqffmevatrvum088400vrl338v6ak7jvnsuh789a/{slug}")
+print(f"   d-tag: {slug}")
+print(f"   NOTE: Add naddr to BlogPost.astro naddrMap for Habla verification link.")
+print(f"   Generate with: nak encode naddr -d '{slug}' -p 384b37777ed57d62912b9f1604a779675636736f39eaf7b07f8c4ecd76de9327 -k 30023 -r 'wss://nos.lol'")
 PYEOF

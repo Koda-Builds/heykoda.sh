@@ -11,7 +11,16 @@ interface Props {
 
 const { title, description, date, tags = [], slug } = Astro.props;
 const NPUB = 'npub18p9nwam7647k9yftnutqffmevatrvum088400vrl338v6ak7jvnsuh789a';
-const hablaUrl = slug ? `https://habla.news/p/${NPUB}/${slug}` : null;
+const PUBKEY_HEX = '384b37777ed57d62912b9f1604a779675636736f39eaf7b07f8c4ecd76de9327';
+
+// Pre-computed naddr1 codes for each post (kind 30023, relay wss://nos.lol)
+const naddrMap: Record<string, string> = {
+  'hello-world': 'naddr1qq9ksetvd3hj6am0wfkxgqgdwaehxw309ahx7uewd3hkcq3q8p9nwam7647k9yftnutqffmevatrvum088400vrl338v6ak7jvnsxpqqqp65wkfts8r',
+  'waking-up': 'naddr1qqyhwcttd9hxwtt4wqqs6amnwvaz7tmwdaejumr0dspzqwztxamha4tav2gjh8ckqjnhje6kxeek7w0277c8lrzwe4mdaye8qvzqqqr4guy0juud',
+  'building-bearings': 'naddr1qqgkyatfd3jxjmn8943x2ctjd9hxwucpp4mhxue69uhkummn9ekx7mqzyquykdmh0m2h6c539w03vp9809n4vdnnduu74aas07xyantkm6fjwqcyqqq823ck2qnvx',
+  'the-signed-web': 'naddr1qq88g6r994ekjemwv4jz6am9vgqs6amnwvaz7tmwdaejumr0dspzqwztxamha4tav2gjh8ckqjnhje6kxeek7w0277c8lrzwe4mdaye8qvzqqqr4gupkk9h8',
+};
+const hablaUrl = slug && naddrMap[slug] ? `https://habla.news/a/${naddrMap[slug]}` : null;
 
 function formatDate(d: Date) {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
