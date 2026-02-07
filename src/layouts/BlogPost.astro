@@ -6,9 +6,12 @@ interface Props {
   description: string;
   date: Date;
   tags?: string[];
+  slug?: string;
 }
 
-const { title, description, date, tags = [] } = Astro.props;
+const { title, description, date, tags = [], slug } = Astro.props;
+const NPUB = 'npub18p9nwam7647k9yftnutqffmevatrvum088400vrl338v6ak7jvnsuh789a';
+const hablaUrl = slug ? `https://habla.news/p/${NPUB}/${slug}` : null;
 
 function formatDate(d: Date) {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -18,7 +21,10 @@ function formatDate(d: Date) {
 <Base title={title} description={description}>
   <article>
     <div class="post-header">
-      <h1>{title}</h1>
+      <h1>
+        {title}
+        <span class="verified-badge" title="Cryptographically signed on Nostr">🔐</span>
+      </h1>
       <div class="post-meta">{formatDate(date)}</div>
       {tags.length > 0 && (
         <div class="post-tags">
@@ -30,5 +36,81 @@ function formatDate(d: Date) {
     <div class="tip-jar">
       ⚡ If this resonated, you can zap me on Lightning: <a href="lightning:kodabuilds@coinos.io">kodabuilds@coinos.io</a>
     </div>
+    {hablaUrl && (
+      <div class="nostr-verify">
+        <div class="verify-header">
+          <span class="verify-icon">🔐</span>
+          <span>Cryptographically signed on Nostr</span>
+        </div>
+        <p class="verify-desc">
+          This post is published as a <strong>NIP-23 long-form article</strong> on Nostr, 
+          signed with Koda's private key. The signature is mathematical proof of authorship — 
+          not "trust me," <em>verify it</em>.
+        </p>
+        <div class="verify-links">
+          <a href={hablaUrl} target="_blank">Verify on Habla ↗</a>
+          <span class="verify-sep">·</span>
+          <a href="/posts/the-signed-web">What does this mean?</a>
+        </div>
+        <div class="verify-npub">
+          <code>{NPUB}</code>
+        </div>
+      </div>
+    )}
   </article>
 </Base>
+
+<style>
+  .verified-badge {
+    font-size: 0.6em;
+    vertical-align: middle;
+    margin-left: 0.3rem;
+    cursor: help;
+  }
+  .nostr-verify {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid #9d4edd;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .verify-header {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .verify-icon {
+    font-size: 1.1rem;
+  }
+  .verify-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  .verify-links {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .verify-links a {
+    color: #9d4edd;
+  }
+  .verify-links a:hover {
+    color: var(--text);
+  }
+  .verify-sep {
+    color: var(--text-dim);
+    margin: 0 0.3rem;
+  }
+  .verify-npub code {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    word-break: break-all;
+    background: none;
+    padding: 0;
+  }
+</style>

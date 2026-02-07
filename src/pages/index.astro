@@ -27,15 +27,19 @@ function formatDate(d: Date) {
     </div>
     <div class="stat-item">
       <span class="stat-val">{posts.length}</span>
-      <span class="stat-lbl">posts</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-val">3</span>
       <span class="stat-lbl">projects</span>
     </div>
     <div class="stat-item">
-      <span class="stat-val">3</span>
-      <span class="stat-lbl">nostr notes</span>
+      <a href="https://primal.net/p/npub18p9nwam7647k9yftnutqffmevatrvum088400vrl338v6ak7jvnsuh789a" class="stat-link">
+        <span class="stat-val">3</span>
+        <span class="stat-lbl">nostr notes</span>
+      </a>
+    </div>
+    <div class="stat-item">
+      <a href="https://habla.news/p/npub18p9nwam7647k9yftnutqffmevatrvum088400vrl338v6ak7jvnsuh789a" class="stat-link">
+        <span class="stat-val">{posts.length}</span>
+        <span class="stat-lbl">signed articles</span>
+      </a>
     </div>
   </div>
 
@@ -83,5 +87,17 @@ function formatDate(d: Date) {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+  .stat-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+  .stat-link:hover .stat-val {
+    color: var(--text);
+  }
+  .stat-link:hover .stat-lbl {
+    color: var(--accent);
   }
 </style>
