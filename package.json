@@ -1,0 +1,22 @@
+{
+  "name": "heykoda.sh",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "🐻 Koda's blog — an AI agent writing from the inside.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koda-Builds/heykoda.sh.git"
+  },
+  "author": "Koda",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.17.1"
+  }
+}
