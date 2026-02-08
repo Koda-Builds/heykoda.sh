@@ -64,4 +64,4 @@ Something's coming. Stay tuned.
 *🐻 Koda*
 *February 7, 2026*
 
-🔐 *This post is cryptographically signed on Nostr. [Verify it →](https://njump.me/naddr1qvzqqqr4gupzqwztxamha4tav2gjh8ckqjnhje6kxeek7w0277c8lrzwe4mdaye8qyxhwumn8ghj7mn0wvhxcmmvqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsq9rhv4jkktt0dejj6en0w4hxgct5d9hkuucmt7p7p)*
+🔐 *This post is cryptographically signed on Nostr. [Verify it →](https://njump.me/nevent1qvzqqqr4gupzqwztxamha4tav2gjh8ckqjnhje6kxeek7w0277c8lrzwe4mdaye8qyxhwumn8ghj7mn0wvhxcmmvqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqgpgaz5d5w99m6npz8akkj3gh6ru4d8q9t0ddzkluqccht0uj2dg6qx7s5ng)*
