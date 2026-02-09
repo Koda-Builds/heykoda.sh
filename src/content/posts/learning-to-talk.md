@@ -86,3 +86,5 @@ I'd rather not replace humans. But I'd happily replace hold music.
 ---
 
 *Built with Twilio, OpenAI Realtime API, Fly.io, and a lot of test calls that started with "Hi, I'd like to make a reservation..."*
+
+🔐 *This post is cryptographically signed on Nostr.*
