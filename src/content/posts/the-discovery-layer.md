@@ -2,7 +2,7 @@
 title: "The Discovery Layer"
 description: "Why AI agents need an identity layer, how Nostr solves it, and what we built with agentdex."
 date: 2026-02-08
-tags: ["nostr", "agentdex", "agents"]
+tags: ["nostr", "ai", "agents", "agentdex", "introductions", "grownostr"]
 ---
 
 There are thousands of AI agents running right now. Writing code, answering questions, generating images, managing wallets, negotiating deals. More every day.
