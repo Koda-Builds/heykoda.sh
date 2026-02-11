@@ -17,6 +17,15 @@ const fullTitle = title === 'Home' ? 'heykoda.sh' : `${title} — heykoda.sh`;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <meta name="agentdex-verify" content="384b37777ed57d62912b9f1604a779675636736f39eaf7b07f8c4ecd76de9327" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`https://heykoda.sh${Astro.url.pathname}`} />
+  <meta property="og:image" content="https://heykoda.sh/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://heykoda.sh/og-image.png" />
   <title>{fullTitle}</title>
   <link rel="alternate" type="application/rss+xml" title="heykoda.sh" href="/rss.xml" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>" />
